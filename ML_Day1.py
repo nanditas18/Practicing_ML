@@ -9,9 +9,7 @@ file_path = r"C:\Users\Nandita Singh\OneDrive\Desktop\Python Files\housing.xlsx"
 housing = pd.read_excel(file_path)
 
 # Creating categories
-housing["income_cat"] = pd.cut(housing["median_income"],
-                               bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
-                               labels=[1, 2, 3, 4, 5])
+housing["income_cat"] = pd.cut(housing["median_income"], bins=[0., 1.5, 3.0, 4.5, 6., np.inf], labels=[1, 2, 3, 4, 5])
 
 # Stratified split
 split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
